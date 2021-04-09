@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class ArmaController : MonoBehaviour
     {
         if (Input.GetKeyDown("x"))
         {
-            Instantiate(projetil, new Vector3(posição.transform.position.x, posição.transform.position.y, posição.transform.position.z), Quaternion.identity);
+            Instantiate(projetil, posição.transform.position, Camera.main.transform.rotation);
         }
     }
 

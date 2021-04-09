@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class projetil : MonoBehaviour
 {
-    private float Speed = 200;
+    private float Speed = 150;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class projetil : MonoBehaviour
 
     void OnTriggerEnter(Collider outro)
     {
-        if (outro.gameObject.CompareTag("Quebravel"))
+        if (outro.gameObject.CompareTag("Quebravel") || outro.gameObject.CompareTag("parede"))
         {
             Destroy(gameObject);
         }

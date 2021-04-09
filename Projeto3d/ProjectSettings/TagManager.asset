@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Quebravel
   - projetil
+  - parede
   layers:
   - Default
   - TransparentFX
