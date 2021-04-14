@@ -15,7 +15,7 @@ public class ArmaController : MonoBehaviour
     {
         if (Input.GetKeyDown("x"))
         {
-            Instantiate(projetil, posição.transform.position, Camera.main.transform.rotation);
+            Instantiate(projetil, posição.transform.position, posição.transform.rotation);
         }
     }
 

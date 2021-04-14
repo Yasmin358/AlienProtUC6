@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class projetil : MonoBehaviour
 {
-    private float Speed = 150;
+    private float Speed = 25;
 
     void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = Camera.main.transform.forward * Speed;
+        rb.velocity = this.transform.forward * Speed;
         Destroy(gameObject, 3);
     }
 
