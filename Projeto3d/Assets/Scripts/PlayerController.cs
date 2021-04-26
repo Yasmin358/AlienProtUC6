@@ -4,14 +4,16 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public float MoveSpeed;
-    public float RotationSpeed;
+    float MoveSpeed = 10;
+    float RotationSpeed = 100;
     CharacterController cc;
     private Animator anim;
     protected Vector3 gravidade = Vector3.zero;
     protected Vector3 move = Vector3.zero;
     private bool jump = false;
-    private int vida = 100;
+    int pontuacao = 0;
+    [HideInInspector] public int vida = 100;     
+    public int chaves;
 
     void Start()
     {
@@ -63,5 +65,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    public void DanoPlayer(int dano){
+        if(vida == 0){
+        Destroy(gameObject);
+        }else{
+           vida = vida - dano;
+        }
+    }
+
+    public void SetPontuacao(int pontuar){        
+        pontuacao = pontuacao + pontuar;
+                   
+    }
+
+   
+
+    public void SetChaves(int keys){
+        chaves = chaves + keys;
+    }
 }

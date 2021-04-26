@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ArmadilhaLava : Armadilha
 {
-    
-
-    
-    void Start()
-    {
-		DanoTempo(0, 1, 1); 
+ 
+    private void OnTriggerStay(Collider other) {
+      if(other.gameObject.CompareTag("Player")){
+        DanoTempo(0.01f, 1);
+        
+      }
     }
 }

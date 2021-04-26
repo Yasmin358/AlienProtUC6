@@ -4,16 +4,34 @@ using UnityEngine;
 
 public abstract class Armadilha : MonoBehaviour
 {
-    public int dano = 0;
+    public GameObject player;
+    
+    float timer = 0;
+    
 
-    public void DanoTempo(float timer, float waitTimer, int danoArmadilha)
+    public void DanoTempo(float waitTimer, int dano)
     {
         timer += Time.deltaTime;
-
-        if (timer > waitTimer)
-        {
-            timer = timer - waitTimer;
-        }
-    }
+        
+            if(timer > waitTimer){
+                timer = timer - waitTimer;
+                Dano(dano);
+            }
+            
+            
+    }       
+    public void Dano(int dano){
+        player.GetComponent<PlayerController>().DanoPlayer(dano);
+    }        
+            
+            
+        
+        
+       
+        
+            
+            
+        
+    
 
 }
