@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParedeController : MonoBehaviour
 {
-    public int paredeVida = 3;
+    int paredeVida = 3;
 
     void Start()
     {

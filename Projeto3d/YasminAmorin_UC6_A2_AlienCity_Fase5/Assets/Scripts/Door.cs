@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -43,13 +42,6 @@ public class Door : MonoBehaviour
                abrirPorta = true; 
             }        
             
-        }
-    }
-
-   private void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag == "Player")
-        {
-             SceneManager.LoadScene(2);
         }
     }
 

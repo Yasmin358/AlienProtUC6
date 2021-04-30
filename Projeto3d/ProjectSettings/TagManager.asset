@@ -9,6 +9,7 @@ TagManager:
   - parede
   - Esmaga
   - pedra
+  - Painel
   layers:
   - Default
   - TransparentFX
