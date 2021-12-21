@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    
     float MoveSpeed = 10;
     float RotationSpeed = 100;
     CharacterController cc;
@@ -11,8 +12,9 @@ public class PlayerController : MonoBehaviour
     protected Vector3 gravidade = Vector3.zero;
     protected Vector3 move = Vector3.zero;
     private bool jump = false;
-    int pontuacao = 0;
-    [HideInInspector] public int vida = 100;     
+    [HideInInspector] public int pontuacao = 0;
+    [HideInInspector] public int vida = 100;   
+   
     public int chaves;
 
     void Start()
@@ -43,6 +45,10 @@ public class PlayerController : MonoBehaviour
         move += gravidade;
         cc.Move(move * Time.deltaTime);
         Anima();
+
+        
+            
+        
     }
 
     void Anima()
@@ -67,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
     public void DanoPlayer(int dano){
         if(vida == 0){
-        Destroy(gameObject);
+         print("Game Over");
         }else{
            vida = vida - dano;
         }
