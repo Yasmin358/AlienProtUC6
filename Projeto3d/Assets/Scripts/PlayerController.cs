@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+         if(Time.timeScale == 0f){
+            Time.timeScale = 1f;
+        }
     }
 
     // Update is called once per frame

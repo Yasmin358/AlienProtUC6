@@ -47,10 +47,14 @@ public class Door : MonoBehaviour
     }
 
    private void OnTriggerExit(Collider other) {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && abrirPorta == true)
         {
              SceneManager.LoadScene(2);
         }
+    }
+
+    public bool Porta(){
+        return abrirPorta;
     }
 
 

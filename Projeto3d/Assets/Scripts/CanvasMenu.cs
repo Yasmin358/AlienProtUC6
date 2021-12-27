@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class CanvasMenu : MonoBehaviour
 {
-   public GameObject PainelCredit;
+   public GameObject Painel;
     void Start()
     {
-        PainelCredit.SetActive(false);
+        Painel.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -23,10 +24,28 @@ public class CanvasMenu : MonoBehaviour
 
     public void CreditsGame(){
        
-       PainelCredit.SetActive(true);
+       Painel.SetActive(true);
     }
 
     public void BackMenu(){
-        PainelCredit.SetActive(false);
+        Painel.SetActive(false);
+    }
+    
+     public void bottomExit(){
+         Application.Quit();       
+     }
+
+     public void bottomMenu(){
+        SceneManager.LoadScene(0);
+     }
+
+       public void Resume(){
+        Painel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void Pause(){
+       Painel.SetActive(true);
+       Time.timeScale = 0f;
     }
 }
